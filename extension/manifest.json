@@ -10,7 +10,7 @@
   "host_permissions": [
     "https://consumer-api.wolt.com/*",
     "https://wolt.com/*",
-    "http://localhost:5000/*"
+    "http://jonsbo.local/*"
   ],
   "background": {
     "service_worker": "background.js"

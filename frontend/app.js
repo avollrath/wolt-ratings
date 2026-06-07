@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:5000";
+const API_BASE = `${window.location.origin}/wolt-ratings`;
 
 class ApiError extends Error {
   constructor(message, status) {

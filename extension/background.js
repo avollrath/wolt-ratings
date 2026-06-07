@@ -165,7 +165,7 @@ async function handleSync() {
     cursor = page.next_cursor || page.nextCursor || page.cursor_next || page.next || null;
   } while (cursor);
 
-  const backendRes = await fetch("http://localhost:5000/sync", {
+  const backendRes = await fetch("http://jonsbo.local/wolt-ratings/sync", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ orders }),

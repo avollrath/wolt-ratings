@@ -1,0 +1,9 @@
+services:
+  wolt-ratings:
+    build: .
+    container_name: wolt-ratings
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    volumes:
+      - /mnt/cache/appdata/wolt-ratings:/data

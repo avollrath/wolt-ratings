@@ -40,7 +40,7 @@ let serverOk = false;
 
 async function checkServer() {
   try {
-    const res = await fetch("http://localhost:5000/health", { signal: AbortSignal.timeout(2000) });
+    const res = await fetch("http://jonsbo.local/wolt-ratings/health", { signal: AbortSignal.timeout(2000) });
     if (!res.ok) throw new Error();
     const data = await res.json();
     setDot(serverDot, serverIcon, "ok");
@@ -61,7 +61,7 @@ async function checkServer() {
   } catch {
     setDot(serverDot, serverIcon, "error");
     serverLabel.textContent = "Backend unreachable";
-    serverSub.textContent   = "Run python backend/app.py";
+    serverSub.textContent   = "Check jonsbo.local/wolt-ratings";
     lastSyncedTxt.textContent = "";
     serverOk = false;
   }

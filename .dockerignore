@@ -1,0 +1,6 @@
+.git
+.gitignore
+screenshots
+extension
+backend/__pycache__
+backend/orders_db.json

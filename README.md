@@ -34,6 +34,16 @@ python backend/app.py
 
 The backend starts at `http://localhost:5000` and serves the dashboard from `frontend/`.
 
+### Docker on Unraid
+
+```bash
+docker compose up --build -d
+```
+
+The dashboard is available at `http://jonsbo.local/wolt-ratings/`. Order data is stored
+on the Unraid cache pool at `/mnt/cache/appdata/wolt-ratings/orders_db.json`.
+Do not expose port 5000 to the internet; the app has no authentication.
+
 ---
 
 ## Loading the Extension

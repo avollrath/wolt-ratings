@@ -9,7 +9,10 @@ from flask_cors import CORS
 app = Flask(__name__, static_folder="../frontend", static_url_path="")
 CORS(app)
 
-DB_PATH = os.path.join(os.path.dirname(__file__), "orders_db.json")
+DB_PATH = os.environ.get(
+    "WOLT_RATINGS_DB_PATH",
+    os.path.join(os.path.dirname(__file__), "orders_db.json"),
+)
 DEMO_DB_PATH = os.path.join(os.path.dirname(__file__), "example_orders.json")
 EXCHANGE_RATES_PATH = os.path.join(os.path.dirname(__file__), "exchange_rates.json")
 FRONTEND_DIR = os.path.join(os.path.dirname(__file__), "..", "frontend")
@@ -323,5 +326,5 @@ def health():
 
 
 if __name__ == "__main__":
-    print("Wolt Ratings backend running at http://localhost:5000")
-    app.run(debug=True, port=5000)
+    print("Wolt Ratings backend running at http://0.0.0.0:5000")
+    app.run(host="0.0.0.0", port=5000)
