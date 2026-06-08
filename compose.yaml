@@ -4,7 +4,7 @@ services:
     container_name: wolt-ratings
     restart: unless-stopped
     labels:
-      net.unraid.docker.icon: https://raw.githubusercontent.com/avollrath/wolt-ratings/develop/frontend/assets/logo.svg
+      net.unraid.docker.icon: https://raw.githubusercontent.com/avollrath/wolt-ratings/develop/extension/icons/icon128.png
       net.unraid.docker.webui: http://[IP]/wolt-ratings/
     ports:
       - "5000:5000"
